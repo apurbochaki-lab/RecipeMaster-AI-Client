@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+
+@theme {
+  --color-primary: #FF7A00;
+  --color-secondary: #4CAF50;
+  --color-neutral-bg: #FFF8F0;
+  --color-card-bg: #FFFFFF;
+  --color-primary-text: #2D2D2D;
+  --color-secondary-text: #6B7280;
+  --color-border-light: #E5E7EB;
+}
+
+body {
+  background-color: var(--color-neutral-bg);
+  color: var(--color-primary-text);
+}
