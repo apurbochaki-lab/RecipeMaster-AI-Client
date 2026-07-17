@@ -32,8 +32,8 @@ const Navbar = () => {
         const links = [
             { label: "Home", href: "/", icon: House },
             { label: "Recipes", href: "/recipes", icon: ChartAreaStacked },
-            { label: "Blog", href: "/blog", icon: FileText },
-            { label: "About", href: "/about", icon: CircleInfo },
+            { label: "Blog", href: "/extras/blog", icon: FileText },
+            { label: "About", href: "/extras/about", icon: CircleInfo },
         ];
 
         if (user) {

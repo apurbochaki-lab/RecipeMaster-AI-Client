@@ -35,7 +35,7 @@ export default function Footer() {
               <li><Link href="/explore" className="text-secondary-text hover:text-primary transition-colors">Explore Recipes</Link></li>
               <li><Link href="/categories" className="text-secondary-text hover:text-primary transition-colors">Categories</Link></li>
               <li><Link href="/community" className="text-secondary-text hover:text-primary transition-colors">Community</Link></li>
-              <li><Link href="/about" className="text-secondary-text hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/extras/about" className="text-secondary-text hover:text-primary transition-colors">About Us</Link></li>
             </ul>
           </div>
 
@@ -43,10 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-primary-text mb-6">Support</h4>
             <ul className="space-y-3">
-              <li><Link href="/faq" className="text-secondary-text hover:text-primary transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="text-secondary-text hover:text-primary transition-colors">Contact Us</Link></li>
-              <li><Link href="/privacy" className="text-secondary-text hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="text-secondary-text hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link href="/extras/faq" className="text-secondary-text hover:text-primary transition-colors">FAQ</Link></li>
+              <li><Link href="/extras/contact-us" className="text-secondary-text hover:text-primary transition-colors">Contact Us</Link></li>
+              <li><Link href="/extras/privacy-policy" className="text-secondary-text hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/extras/terms-of-service" className="text-secondary-text hover:text-primary transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
 

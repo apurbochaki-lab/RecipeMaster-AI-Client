@@ -21,7 +21,7 @@ export default function Hero() {
               Explore Recipes
             </Link>
             <Link
-              href="/about"
+              href="/extras/about"
               className="w-full sm:w-auto px-8 py-3.5 bg-white text-primary-text border border-border-light font-medium rounded-full hover:bg-neutral-50 transition-colors text-center"
             >
               Learn More
