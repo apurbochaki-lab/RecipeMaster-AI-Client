@@ -32,7 +32,7 @@ export default function WhyChooseUs() {
           <div className="flex-1 w-full order-2 lg:order-1 relative">
             <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               <Image 
-                src="https://images.unsplash.com/photo-1556910103-1c02745a872e?q=80&w=800&auto=format&fit=crop" 
+                src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22" 
                 alt="Cooking together"
                 fill
                 className="object-cover"
