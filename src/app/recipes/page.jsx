@@ -1,7 +1,7 @@
 import PaginationControls from "@/components/common/PaginationControls";
 import RecipeFilters from "@/components/private/RecipeFilters";
 import RecipeCard from "@/components/common/RecipeCard";
-import { getRecipes } from "@/lib/actions/recipes";
+import { getRecipes } from "@/lib/api/recipes";
 
 const AllRecipesPage = async ({ searchParams }) => {
     const params = await searchParams;
