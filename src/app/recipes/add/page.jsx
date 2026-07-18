@@ -8,7 +8,8 @@ export const metadata = {
 
 export default async function AddRecipe() {
 
-    const user =  await getUserSession()
+    const user = await getUserSession()
+    console.log(user)
 
     return (
         <section className="min-h-screen bg-neutral-bg py-16 pt-25 px-4 sm:px-6 lg:px-8">

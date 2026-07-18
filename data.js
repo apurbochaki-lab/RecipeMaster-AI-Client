@@ -1,21 +1,22 @@
-const recipe =
-{
-    title: "Grilled Salmon with Avocado Salsa",
-    shortDescription: "A healthy and flavorful dish featuring perfectly grilled salmon topped with a fresh avocado salsa.",
-    description: "This grilled salmon recipe is a perfect balance of flavors, combining the rich taste of salmon with the creamy texture of avocado salsa. It's a quick and easy meal that's both nutritious and delicious.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo3WfSUVaWGmqs7xW_HigQhWFx_8eraZWrEix_rFkAiw&s=10",
-    ingredients: "Salmon, Avocado, Lime, Cilantro, Red Onion, Olive Oil, Salt, Pepper",
+const recipe = {
+    title: "Shorishe Ilish",
+    shortDescription: "Traditional Bengali mustard fish curry made with Hilsa.",
+    description: "Shorishe Ilish is a quintessential Bengali dish where tender Hilsa fish steaks are simmered in a sharp, pungent mustard paste gravy with spicy green chilies and a drizzle of mustard oil.",
+    category: "Bengali Food",
+    image: "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=600&auto=format&fit=crop",
+    ingredients: "Hilsa Fish, Mustard seeds paste, Turmeric powder, Mustard oil, Green chilies, Salt",
     steps: [
-        "First, preheat your grill to medium-high heat.",
-        "Season the salmon fillets with salt and pepper.",
-        "Grill the salmon for about 4-5 minutes on each side, or until it flakes easily with a fork."
+        "Marinate the Hilsa fish pieces with turmeric powder and salt for 10 minutes.",
+        "Make a smooth paste of mustard seeds and green chilies with a pinch of salt and water.",
+        "Heat mustard oil in a pan, lightly fry the fish pieces (optional) or directly add them to the mustard mixture.",
+        "Add water, cover, and simmer on medium heat until the fish is cooked and the oil floats to the top."
     ],
-    cookingTime: 30,
+    cookingTime: 25,
     servings: 4,
     nutrition: {
-        calories: 350,
-        protein: 34,
-        fat: 20,
-        carbs: 5
+        calories: 320,
+        protein: 22,
+        fat: 24,
+        carbs: 3
     }
-}
+};

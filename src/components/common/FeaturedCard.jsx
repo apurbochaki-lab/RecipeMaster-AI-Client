@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function RecipesCard({ recipe }) {
+export default function FeaturedCard({ recipe }) {
   return (
     <div className="bg-card-bg border border-border-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col h-full group">
       <div className="relative h-48 w-full overflow-hidden">

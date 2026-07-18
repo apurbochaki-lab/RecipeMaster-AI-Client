@@ -1,4 +1,4 @@
-import RecipesCard from "@/components/common/RecipesCard";
+import FeaturedCard from "@/components/common/FeaturedCard";
 
 const placeholderRecipes = [
   {
@@ -63,7 +63,7 @@ export default function FeaturedRecipes() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {placeholderRecipes.map(recipe => (
-            <RecipesCard key={recipe.id} recipe={recipe} />
+            <FeaturedCard key={recipe.id} recipe={recipe} />
           ))}
         </div>
       </div>

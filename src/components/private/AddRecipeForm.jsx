@@ -6,6 +6,8 @@ import {
     Card,
     Input,
     Label,
+    ListBox,
+    Select,
     TextArea,
     TextField,
 } from "@heroui/react";
@@ -23,6 +25,21 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import { imageUpload } from "@/lib/core/imageUpload";
 import { postRecipe } from "@/lib/actions/recipes";
+
+const categoryOptions = [
+    "Bengali Food",
+    "Breakfast",
+    "Lunch",
+    "Dinner",
+    "Dessert",
+    "Fast Food",
+    "Healthy",
+    "Snacks",
+    "Appetizer",
+    "Beverages",
+    "Vegan",
+    "Seafood",
+];
 
 export default function AddRecipeForm({ user }) {
 
@@ -83,6 +100,7 @@ export default function AddRecipeForm({ user }) {
             shortDescription: data.shortDescription,
             description: data.description,
             image: imgUrl,
+            category: data.category,
             ingredients: data.ingredients,
             steps: steps.filter((step) => step.trim() !== ""),
             cookingTime: Number(data.cookingTime),
@@ -110,7 +128,7 @@ export default function AddRecipeForm({ user }) {
                 image: user?.image || null
             }
         }
-        console.log(newData);
+        // console.log(newData);
 
         // POST API
         const res = await postRecipe(newData);
@@ -123,7 +141,7 @@ export default function AddRecipeForm({ user }) {
             form.reset();
             setImagePreview(null);
             setSelectedFile(null);
-            setSteps(null)
+            // setSteps(null)
         }
         else {
             toast.error("Something went wrong")
@@ -186,6 +204,35 @@ export default function AddRecipeForm({ user }) {
                             className="w-full bg-[#FFF8F0] border border-[#E5E7EB] text-[#2D2D2D] placeholder-[#6B7280] rounded-xl focus:border-[#FF7A00] focus:ring-1 focus:ring-[#FF7A00] transition-all p-4 outline-none font-medium"
                         />
                     </div>
+
+                    {/* Category */}
+                    <Select
+                        name="category"
+                        className="w-full"
+                        placeholder="Select category"
+                        isRequired={true}
+                    >
+                        <Label className="text-sm font-semibold text-[#2D2D2D] mb-2 block">Category</Label>
+                        <Select.Trigger className="w-full bg-[#FFF8F0] border border-[#E5E7EB] text-[#2D2D2D] rounded-xl h-12 px-4 flex items-center justify-between focus:border-[#FF7A00] focus:ring-1 focus:ring-[#FF7A00] transition-all outline-none font-medium">
+                            <Select.Value />
+                            <Select.Indicator className="text-[#6B7280]" />
+                        </Select.Trigger>
+                        <Select.Popover className="bg-white border border-[#E5E7EB] rounded-xl shadow-xl mt-1">
+                            <ListBox className="p-1">
+                                {categoryOptions.map((item) => (
+                                    <ListBox.Item
+                                        key={item}
+                                        id={item}
+                                        textValue={item}
+                                        className="text-[#2D2D2D] hover:bg-[#FF7A00] hover:text-white px-3 py-2 rounded-lg cursor-pointer transition-colors font-medium"
+                                    >
+                                        {item}
+                                        <ListBox.ItemIndicator />
+                                    </ListBox.Item>
+                                ))}
+                            </ListBox>
+                        </Select.Popover>
+                    </Select>
 
                     <div className="flex flex-col gap-2">
                         <Label htmlFor="ingredients" className="text-sm font-semibold text-[#2D2D2D]">
