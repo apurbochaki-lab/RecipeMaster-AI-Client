@@ -1,4 +1,6 @@
 import FeaturedCard from "@/components/common/FeaturedCard";
+import { serverFetch } from "@/lib/actions/server";
+import RecipeCard from "../common/RecipeCard";
 
 const placeholderRecipes = [
   {
@@ -47,7 +49,11 @@ const placeholderRecipes = [
   }
 ];
 
-export default function FeaturedRecipes() {
+export default async function FeaturedRecipes() {
+
+  const featured = await serverFetch("/api/featured-recipes")
+  console.log(featured)
+
   return (
     <section className="py-16 md:py-24 bg-neutral-bg">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -58,14 +64,22 @@ export default function FeaturedRecipes() {
           </div>
           <button className="text-primary font-medium hover:text-orange-600 transition-colors whitespace-nowrap flex items-center gap-2">
             View All Recipes
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
           </button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {placeholderRecipes.map(recipe => (
             <FeaturedCard key={recipe.id} recipe={recipe} />
           ))}
+        </div> */}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featured.map(recipe => (
+            <RecipeCard key={recipe._id} recipe={recipe} />
+          ))}
         </div>
+
       </div>
     </section>
   );

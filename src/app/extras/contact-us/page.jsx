@@ -1,3 +1,5 @@
+'use client'
+
 export default function ContactUsPage() {
   return (
     <div className="py-32 bg-neutral-bg min-h-screen">

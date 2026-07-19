@@ -3,6 +3,8 @@ import RecipeDetails from "@/components/common/RecipeDetails";
 import ReviewSection from "@/components/private/ReviewSection";
 import { getUserSession } from "@/lib/session";
 import { getRecentReviews } from "@/lib/api/reviews";
+import { Button } from "@heroui/react";
+import Link from "next/link";
 
 const RecipeDetailsPage = async ({ params }) => {
 
@@ -29,13 +31,26 @@ const RecipeDetailsPage = async ({ params }) => {
         <div className="min-h-screen bg-[#FFF8F0] pt-24 pb-20">
             <RecipeDetails recipe={recipe} />
 
-            <div className="max-w-5xl mx-auto">
-                <ReviewSection
-                    recipe={recipe}
-                    user={user}
-                    recentReviews={recentReviews}
-                />
-            </div>
+            {
+                user && <div className="max-w-5xl mx-auto">
+                    <ReviewSection
+                        recipe={recipe}
+                        user={user}
+                        recentReviews={recentReviews}
+                    />
+                </div>
+            }
+
+            {
+                !user && <div className="max-w-5xl mx-auto">
+                    <h2 className="text-center font-bold text-amber-500 mb-5">Please login to review submit!</h2>
+                    <Link href="/auth/login">
+                        <Button variant="outline" className="mx-auto flex rounded-lg">
+                            Login Now
+                        </Button>
+                    </Link>
+                </div>
+            }
         </div>
     );
 };

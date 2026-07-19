@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { authHeaderClient } from "../core/getToken";
 
 const baseUrl = process.env.NEXT_PUBLIC_SERVER;
 
@@ -7,7 +8,7 @@ export const serverMutation = async (path, data = {}, method = "POST") => {
         method,
         headers: {
             "Content-Type": "application/json",
-
+            ...await authHeaderClient()
         },
         body: JSON.stringify(data)
     })

@@ -2,6 +2,9 @@ import PaginationControls from "@/components/common/PaginationControls";
 import RecipeFilters from "@/components/private/RecipeFilters";
 import RecipeCard from "@/components/common/RecipeCard";
 import { getRecipes } from "@/lib/api/recipes";
+import { authClient } from "@/lib/auth-client";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const AllRecipesPage = async ({ searchParams }) => {
     const params = await searchParams;
@@ -20,6 +23,11 @@ const AllRecipesPage = async ({ searchParams }) => {
     const totalPages = data?.totalPages;
     const totalData = data?.totalItems;
 
+    // const { data: tokenData } = await authClient.token()
+    // const token = tokenData?.token;
+
+    
+
     // No data found fallback
     if (!recipes || recipes.length === 0) {
         return (
@@ -37,7 +45,7 @@ const AllRecipesPage = async ({ searchParams }) => {
     return (
         <div className="min-h-screen bg-[#FFF8F0] pt-24 pb-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-                
+
                 {/* Heading Part */}
                 <div className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-extrabold text-[#2D2D2D] mb-4">

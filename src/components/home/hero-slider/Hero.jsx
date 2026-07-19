@@ -15,7 +15,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start mt-8">
             <Link
-              href="/explore"
+              href="/recipes"
               className="w-full sm:w-auto px-8 py-3.5 bg-primary text-white font-medium rounded-full hover:bg-orange-600 transition-colors shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
             >
               Explore Recipes

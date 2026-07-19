@@ -137,11 +137,10 @@ export default function AddRecipeForm({ user }) {
             toast.success("Recipe Posted")
 
             // Clear form
-            // e.target.reset();
             form.reset();
             setImagePreview(null);
             setSelectedFile(null);
-            // setSteps(null)
+            setSteps([""])
         }
         else {
             toast.error("Something went wrong")

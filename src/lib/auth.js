@@ -12,9 +12,16 @@ const db = client.db("RecipeMaster-DB");
 export const auth = betterAuth({
     database: mongodbAdapter(db, { client }),
     emailAndPassword: { enabled: true },
-    // plugins: [
-    //     jwt()
-    // ],
+    session: {
+        cookieCache: {
+            enabled: true,
+            maxAge: 60 * 60 * 24 * 7, // 7 days
+            strategy: "jwt"
+        }
+    },
+    plugins: [
+        jwt()
+    ],
     socialProviders: {
         google: {
             clientId: process.env.GOOGLE_CLIENT_ID,
