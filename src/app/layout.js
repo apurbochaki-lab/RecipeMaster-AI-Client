@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/common/Footer";
+import ChatBot from "@/components/chatbot/ChatBot";
 
 const outfitFont = Outfit({
   variable: "--font-outfit",
@@ -23,6 +24,8 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col font-[var(--font-outfit)]">
         <Navbar />
         {children}
+
+        <ChatBot/>
         <Footer />
         <Toaster />
       </body>

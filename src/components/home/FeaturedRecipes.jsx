@@ -52,7 +52,7 @@ const placeholderRecipes = [
 export default async function FeaturedRecipes() {
 
   const featured = await serverFetch("/api/featured-recipes")
-  console.log(featured)
+  // console.log(featured)
 
   return (
     <section className="py-16 md:py-24 bg-neutral-bg">
