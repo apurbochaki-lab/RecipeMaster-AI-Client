@@ -2,9 +2,7 @@ import PaginationControls from "@/components/common/PaginationControls";
 import RecipeFilters from "@/components/private/RecipeFilters";
 import RecipeCard from "@/components/common/RecipeCard";
 import { getRecipes } from "@/lib/api/recipes";
-import { authClient } from "@/lib/auth-client";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
+
 
 const AllRecipesPage = async ({ searchParams }) => {
     const params = await searchParams;
@@ -23,10 +21,6 @@ const AllRecipesPage = async ({ searchParams }) => {
     const totalPages = data?.totalPages;
     const totalData = data?.totalItems;
 
-    // const { data: tokenData } = await authClient.token()
-    // const token = tokenData?.token;
-
-    
 
     // No data found fallback
     if (!recipes || recipes.length === 0) {

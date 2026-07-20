@@ -64,10 +64,14 @@ const RecipeFilters = () => {
                 onChange={(e) => updateQuery("category", e.target.value)}
                 className="w-full sm:w-auto border border-[#E5E7EB] bg-white text-[#2D2D2D] px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF7A00] focus:border-transparent min-w-[180px] shadow-sm cursor-pointer transition-all"
             >
-                <option value="">All Categories</option>
+                <option value="All">All Categories</option>
+                <option value="Healthy">Healthy</option>
                 <option value="Bengali Food">Bengali Food</option>
-                <option value="Dessert">Dessert</option>
                 <option value="Fast Food">Fast Food</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Dessert">Dessert</option>
                 <option value="Drinks">Drinks</option>
             </select>
 

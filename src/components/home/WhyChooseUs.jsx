@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -24,15 +27,57 @@ const features = [
   }
 ];
 
+// ─── Reusable Animation Variants ────────────────────────────────────────────
+const sectionFadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const fadeInScale = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const featureFadeUp = {
+  hidden: { opacity: 0, x: -16 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export default function WhyChooseUs() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          <div className="flex-1 w-full order-2 lg:order-1 relative">
+          {/* Image column */}
+          <motion.div
+            className="flex-1 w-full order-2 lg:order-1 relative"
+            variants={fadeInScale}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <Image 
-                src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22" 
+              <Image
+                src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22"
                 alt="Cooking together"
                 fill
                 className="object-cover"
@@ -50,15 +95,31 @@ export default function WhyChooseUs() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Text column */}
           <div className="flex-1 order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-text mb-6">Why Choose RecipeMaster AI?</h2>
-            <p className="text-secondary-text text-lg mb-10">
-              We make cooking simple, healthy, and fun. Whether you are a beginner or a pro chef, our platform provides everything you need to create perfect meals.
-            </p>
-            <div className="space-y-8">
+            <motion.div
+              variants={sectionFadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-text mb-6">Why Choose RecipeMaster AI?</h2>
+              <p className="text-secondary-text text-lg mb-10">
+                We make cooking simple, healthy, and fun. Whether you are a beginner or a pro chef, our platform provides everything you need to create perfect meals.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="space-y-8"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               {features.map((feature, i) => (
-                <div key={i} className="flex gap-4">
+                <motion.div key={i} className="flex gap-4" variants={featureFadeUp}>
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                     {feature.icon}
                   </div>
@@ -66,9 +127,9 @@ export default function WhyChooseUs() {
                     <h3 className="text-xl font-bold text-primary-text mb-2">{feature.title}</h3>
                     <p className="text-secondary-text">{feature.desc}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

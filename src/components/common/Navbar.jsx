@@ -7,6 +7,7 @@ import { Avatar, Button, Drawer, Dropdown, Label, Spinner } from "@heroui/react"
 import { useMemo, useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
+import { ChefHat } from "lucide-react";
 
 const Navbar = () => {
     const pathName = usePathname();
@@ -51,8 +52,12 @@ const Navbar = () => {
 
                 {/* Brand Logo */}
                 <Link href="/" className="flex items-center gap-2 group cursor-pointer">
+                    <ChefHat size={24} className="text-[#FF7A00]" />
+
                     <h2 className="text-[22px] font-black tracking-tight text-[#2D2D2D]">
-                        <span className="text-[#FF7A00] transition-colors duration-300 group-hover:text-[#4CAF50]">RecipeMaster</span> AI
+                        <span className="text-[#FF7A00] transition-colors duration-300 group-hover:text-[#4CAF50]">
+                            RecipeMaster
+                        </span> AI
                     </h2>
                 </Link>
 
@@ -169,8 +174,15 @@ const Navbar = () => {
                                     />
                                     <Drawer.Header className="border-b border-[#E5E7EB]/60 px-6 py-5">
                                         <Drawer.Heading className="mt-5" onClick={() => setIsOpen(false)}>
-                                            <Link href="/">
+                                            {/* <Link href="/">
                                                 <h2 className="text-[20px] font-black tracking-tight text-[#2D2D2D]">
+                                                    <span className="text-[#FF7A00]">RecipeMaster</span> AI
+                                                </h2>
+                                            </Link> */}
+                                            <Link href="/" className="flex items-center gap-2 whitespace-nowrap">
+                                                <ChefHat size={24} className="text-[#FF7A00] shrink-0" />
+
+                                                <h2 className="text-[20px] font-black tracking-tight text-[#2D2D2D] whitespace-nowrap">
                                                     <span className="text-[#FF7A00]">RecipeMaster</span> AI
                                                 </h2>
                                             </Link>
@@ -185,8 +197,8 @@ const Navbar = () => {
                                                     href="/profile"
                                                     onClick={() => setIsOpen(false)}
                                                     className={`flex items-center gap-3 rounded-xl px-4 py-3 text-base font-bold transition-all ${pathName === "/profile"
-                                                            ? "bg-[#FF7A00]/10 text-[#FF7A00] border-l-4 border-[#FF7A00]"
-                                                            : "text-[#6B7280] hover:bg-white hover:text-[#FF7A00]"
+                                                        ? "bg-[#FF7A00]/10 text-[#FF7A00] border-l-4 border-[#FF7A00]"
+                                                        : "text-[#6B7280] hover:bg-white hover:text-[#FF7A00]"
                                                         }`}
                                                 >
                                                     <Persons className="size-5" />
@@ -203,8 +215,8 @@ const Navbar = () => {
                                                         href={link.href}
                                                         onClick={() => setIsOpen(false)}
                                                         className={`flex items-center gap-3 rounded-xl px-4 py-3 text-base font-bold transition-all ${isActive
-                                                                ? "bg-[#FF7A00]/10 text-[#FF7A00] border-l-4 border-[#FF7A00]"
-                                                                : "text-[#6B7280] hover:bg-white hover:text-[#FF7A00]"
+                                                            ? "bg-[#FF7A00]/10 text-[#FF7A00] border-l-4 border-[#FF7A00]"
+                                                            : "text-[#6B7280] hover:bg-white hover:text-[#FF7A00]"
                                                             }`}
                                                     >
                                                         <Icon className="size-5" />

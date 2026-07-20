@@ -1,3 +1,4 @@
+import { ChefHat } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="text-2xl font-bold text-primary flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <ChefHat size={24} className="text-[#FF7A00]" />
               RecipeMaster AI
             </Link>
             <p className="text-secondary-text text-sm leading-relaxed">

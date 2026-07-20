@@ -1,3 +1,5 @@
+// import { Clock } from "lucide-react";
+import { Clock } from "@gravity-ui/icons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,8 +13,8 @@ const RecipeCard = ({ recipe }) => {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-3 right-3 bg-[#FF7A00] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
-                    {recipe.nutrition?.calories || 0} kcal
+                <div className="absolute top-3 right-3 bg-[#FF7A00] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-[2px]">
+                   <Clock/> {recipe.cookingTime || 0} Min
                 </div>
                 <div className="absolute top-3 left-3 bg-[#4CAF50] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                     {recipe.category}
